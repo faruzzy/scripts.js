@@ -1,0 +1,2513 @@
+#zoom {
+	position:absolute;
+	background-color:#FFF;
+	z-index:650;
+	text-align:left;
+	overflow:hidden;
+	-webkit-box-shadow:0 5px 5px #ccc;
+	-moz-webkit-box-shadow:0 5px 5px #ccc;
+}
+
+#zoom.animate {
+	-webkit-transition:height .5s;
+	-moz-transition:height .5s;
+}
+
+#zoom .container {
+	margin:10px;
+}
+
+.syncStatus {
+	position:absolute;
+	z-index:800;
+	right:20px;
+	top:18px;
+	width:120px;
+	display:none;
+}
+
+.syncStatus.visible {
+	display:block;
+	height:auto;
+}
+
+.syncStatus .header {
+	height:9px;
+	z-index:900;
+	font-family:helvetica,arial,sans-serif;
+	padding:8px 4px;
+}
+
+.syncStatus .header .label {
+	float:left;
+	font-weight:700;
+	cursor:pointer;
+	font-size:12px;
+	text-transform:uppercase;
+}
+
+.syncStatus .count {
+	font-size:14px;
+	color:#555;
+	font-weight:400;
+	text-shadow:none;
+}
+
+.syncStatus .widgets {
+float:right;
+margin-top:-3px;
+}
+
+.syncStatus .widgets progress {
+width:50px;
+}
+
+.syncStatus .header .widgets .button {
+background:0;
+color:#333;
+border:0 solid transparent;
+border-radius:5px;
+font-size:12px;
+margin-left:5px;
+text-shadow:1px 1px 0 #ccc;
+padding:2px 8px;
+}
+
+.syncStatus .body {
+background:#eee;
+border:0 solid transparent;
+border-radius:0 0 5px 5px;
+height:0;
+z-index:800;
+overflow:hidden;
+-webkit-transition:height .2s linear;
+margin:0;
+}
+
+.syncStatus .body.visible {
+height:100px;
+}
+
+.syncStatus .body ul {
+padding-top:5px;
+}
+
+.syncStatus .body li {
+font-size:11px;
+font-family:helvetica,arial,sans-serif;
+cursor:pointer;
+color:#333;
+padding:0 10px 5px;
+}
+
+.kicker {
+font-family:nyt-franklin-1,nyt-franklin-2,helvetica,arial,sans-serif;
+color:#333;
+font-size:10px;
+line-height:14px;
+margin-bottom:1px;
+text-transform:uppercase;
+}
+
+.thumbnail,.thumbWrapper {
+float:left;
+clear:left;
+margin-top:4px;
+margin-right:4px;
+width:60px;
+height:60px;
+}
+
+.headline {
+font-family:nyt-cheltenham-hinted-1,nyt-cheltenham-hinted-2,Georgia,serif;
+font-size:18px;
+line-height:21px;
+cursor:pointer;
+color:#555;
+}
+
+.story.first .headline {
+font-family:nyt-cheltenham-hinted-1,nyt-cheltenham-hinted-2,georgia,serif;
+font-size:30px;
+line-height:33px;
+display:block;
+color:#000;
+}
+
+.headline a:visited {
+color:gray;
+}
+
+.story.first .summary {
+font-family:georgia,times,serif;
+font-size:15px;
+line-height:20px;
+color:#333;
+font-style:normal;
+font-variant:normal;
+font-weight:400;
+}
+
+.story.first .thumbnail,.story.first .thumbnail img {
+height:75px;
+width:75px;
+}
+
+.credit {
+font-size:9px;
+margin-bottom:3px;
+text-align:right;
+display:block;
+font-family:helvetica,arial,sans-serif;
+color:#909090;
+}
+
+.byline {
+color:gray;
+text-transform:uppercase;
+font-size:11px;
+font-family:arial,helvetica,sans-serif;
+font-weight:300;
+margin:4px 0;
+}
+
+.summary p,.body p {
+font-size:12px;
+color:#333;
+font-family:Georgia,times,serif;
+padding-top:0;
+line-height:15px;
+margin:2px 0 0;
+}
+
+.grid .story {
+float:left;
+position:relative;
+height:160px;
+padding:0;
+}
+
+.tallSpan {
+float:right;
+margin-left:15px!important;
+margin-bottom:15px;
+}
+
+.splash {
+position:absolute;
+top:0;
+bottom:0;
+left:0;
+right:0;
+background:#f5f5f5 url(/webapps/skimmer/2.4/images/splash_logo.png) center 45% no-repeat;
+z-index:100000;
+-webkit-transition:opacity .9s;
+-moz-transition:opacity .9s;
+-o-transition:opacity .9s;
+}
+
+.slideshow {
+position:absolute;
+background:#000;
+bottom:0;
+top:0;
+right:0;
+left:0;
+z-index:900;
+overflow:hidden;
+-webkit-transition:margin-top .5s;
+-moz-transition:margin-top .5s;
+-ie-transition:margin-top .5s;
+-o-transition:margin-top .5s;
+}
+
+.slideshowSlides {
+position:absolute;
+background:#000;
+top:0;
+bottom:0;
+right:0;
+left:0;
+}
+
+.slideshowSlides.transition {
+-webkit-transition:margin-left .7s,-webkit-transform .7s;
+-moz-transition:margin-left .7s,-webkit-transform .7s;
+}
+
+.imageSlide {
+float:left;
+display:block;
+background:#000;
+width:400px;
+height:400px;
+}
+
+.slideshow .photo {
+background:#111;
+}
+
+.imageSlide .slideContainer {
+background:#111;
+margin:0 auto;
+}
+
+.slideshowMeta {
+position:absolute;
+bottom:0;
+right:0;
+left:0;
+font-family:nyt-franklin-1,nyt-franklin-2,helvetica,arial,sans-serif;
+background-color:rgba(0,0,0,0.6);
+-webkit-transition:bottom .2s linear;
+-moz-transition:bottom .2s linear;
+-o-transition:bottom .2s linear;
+padding:10px;
+}
+
+.slideshowMeta .caption,.slideshowMeta .credit {
+background-color:transparent!important;
+text-align:left!important;
+}
+
+.slideshowMeta .caption,.slideshowMeta .title,.slideshowMeta .credit {
+width:1000px;
+margin:0 auto;
+}
+
+.slideshowMeta .credit {
+font-size:10px;
+font-family:arial,helvetica,sans-serif;
+color:#fff!important;
+}
+
+.slideshowMeta .caption {
+margin-top:10px;
+font-size:13px;
+line-height:15px;
+font-family:arial,helvetica,sans-serif;
+color:#ccc!important;
+}
+
+.slideshowMeta .title a {
+color:#FFF;
+font-weight:700;
+text-decoration:none;
+font-size:17px;
+}
+
+.slideshowClose {
+position:absolute;
+top:0;
+left:0;
+height:60px;
+width:100px;
+z-index:920;
+cursor:pointer;
+}
+
+.slideshowCloseButton {
+position:absolute;
+left:0;
+font-family:helvetica,arial,sans-serif;
+font-weight:700;
+text-shadow:1px 0 1px #000;
+color:#FFF;
+cursor:button;
+padding:15px 10px;
+}
+
+.slideshow .arrow {
+border:1px solid #444;
+-moz-border-radius:5px;
+-webkit-border-radius:5px;
+border-radius:5px;
+position:absolute;
+top:45%;
+height:50px;
+width:50px;
+}
+
+.slideshowNextButton .arrow {
+background:rgba(30,30,30,0.7) url(/webapps/skimmer/2.4/images/right-light.png) 50% 50% no-repeat;
+right:-5px;
+padding-right:5px;
+border-right:none;
+}
+
+.slideshowPreviousButton .arrow {
+background:rgba(30,30,30,0.7) url(/webapps/skimmer/2.4/images/left-light.png) 50% 50% no-repeat;
+left:-5px;
+padding-left:5px;
+border-left:none;
+}
+
+.slideshowPreviousButton {
+position:fixed;
+left:0;
+top:0;
+bottom:0;
+width:100px;
+z-index:910;
+cursor:pointer;
+}
+
+.slideshowNextButton {
+position:fixed;
+right:0;
+top:0;
+bottom:0;
+z-index:910;
+width:100px;
+cursor:pointer;
+}
+
+.slideshowIndicators {
+text-align:center;
+height:23px;
+}
+
+.slideshowIndicators .thumb {
+color:#666;
+font-size:20px;
+font-family:helvetica,arial,sans-serif;
+cursor:pointer;
+margin:5px;
+}
+
+.slideshowIndicators .thumb.selected {
+color:orange;
+}
+
+#sidebar {
+padding-top:0;
+z-index:110;
+position:absolute;
+top:0;
+width:120px;
+right:0;
+bottom:0;
+height:auto;
+-webkit-transition:top 1s 1s 1s 1s;
+-moz-transition:top 1s 1s 1s 1s;
+margin:20px 20px 20px 0;
+}
+
+::-webkit-scrollbar {
+width:8px;
+height:8px;
+}
+
+::-webkit-scrollbar-track-piece {
+background-color:transparent;
+-webkit-border-radius:4px;
+}
+
+::-webkit-scrollbar-button:start:decrement,::-webkit-scrollbar-button:end:increment {
+display:block;
+height:0;
+background-color:transparent;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+background-color:#999;
+height:50px;
+-webkit-border-radius:4px;
+opacity:0;
+}
+
+#sidebar dl.sectionFeeds {
+overflow:hidden;
+position:absolute;
+top:0;
+left:0;
+right:0;
+margin:0;
+padding:0;
+}
+
+#sidebar dl.helpers {
+position:absolute;
+bottom:0;
+left:0;
+right:0;
+overflow:hidden;
+margin:0;
+}
+
+#sidebar dt {
+font-family:arial,helvetica,sans-serif;
+font-size:12px;
+cursor:pointer;
+font-weight:700;
+text-transform:uppercase;
+margin:0;
+padding:5px;
+}
+
+#sidebar .refresh {
+float:right;
+cursor:pointer;
+height:15px;
+width:14px;
+}
+
+#sidebar dd {
+overflow:auto;
+margin:0;
+padding:0;
+}
+
+#sidebar ol {
+margin:2px 0 0;
+padding:0;
+}
+
+#sidebar .content li {
+font-family:arial,helvetica,sans-serif;
+font-weight:700;
+font-size:11px;
+cursor:pointer;
+text-transform:uppercase;
+list-style:none;
+color:#999;
+position:relative;
+margin:2px 0;
+padding:3px 5px;
+}
+
+#sidebar .content li.selected {
+-webkit-border-radius:3px;
+-moz-border-radius:3px;
+border-radius:3px;
+border-top:1px solid #777;
+border-left:1px solid #777;
+border-right:1px solid transparent;
+border-bottom:1px solid transparent;
+margin:2px 0;
+padding:3px 5px;
+}
+
+#sidebar .label {
+cursor:pointer;
+}
+
+#sidebar .feedStatus {
+float:right;
+font-size:11px;
+color:#999;
+padding-left:5px;
+-webkit-transition:opacity 1s;
+-moz-transition:opacity 1s;
+opacity:0;
+}
+
+#sidebar .feedStatus.offline {
+color:green;
+}
+
+.customize,.shortcuts,.account {
+background-position:center right;
+padding:10px 5px!important;
+}
+
+.shortcutsPanel {
+position:absolute;
+bottom:40px;
+left:50%;
+margin-left:-431px;
+width:662px;
+}
+
+.shortcutsPanel .generalHints {
+float:right;
+width:250px;
+border-left:1px solid #333;
+padding-left:14px;
+}
+
+.shortcutsPanel .generalHints img {
+padding-bottom:10px;
+border-bottom:1px solid #555;
+margin:10px 0;
+}
+
+.shortcutsPanel .keyboardHints {
+font-size:14px;
+color:#ccc;
+}
+
+.shortcutsPanel .keyboardHints table {
+width:397px;
+}
+
+.shortcutsPanel .keyboardHints th,.shortcutsPanel .keyboardHints td {
+text-align:left;
+padding:10px 0;
+}
+
+.shortcutsPanel .keyboardHints td {
+padding-right:14px;
+}
+
+.buttonBox {
+border:1px solid #686868;
+background-color:#ccc;
+overflow:auto;
+margin:10px;
+padding:0;
+}
+
+.buttonBox li {
+background:#FFF;
+border:1px solid #1b3f60;
+display:block;
+color:#999;
+margin:5px;
+padding:0;
+}
+
+.schemeHeader {
+background-color:#275b8a;
+color:#eee;
+text-transform:uppercase;
+font-family:nyt-franklin-1,nyt-franklin-2,arial,sans-serif;
+font-size:11px;
+padding:5px;
+}
+
+.sourcelist {
+border:1px solid #999;
+height:221px;
+background-color:#FFF;
+overflow:auto;
+margin:0;
+padding:0;
+}
+
+.sourcelist li {
+background:#FFF;
+display:block;
+cursor:pointer;
+margin:0!important;
+padding:3px 5px!important;
+}
+
+.sourcelist li.selected {
+background-color:#ddd;
+}
+
+.datalisting {
+border:1px solid #999;
+height:221px;
+background-color:#FFF;
+width:100%;
+overflow:auto;
+margin:0;
+padding:0;
+}
+
+.datalisting li {
+background:#FFF;
+border-bottom:1px solid #ddd;
+display:block;
+margin:0!important;
+padding:3px 5px!important;
+}
+
+.datalisting li p {
+color:#999;
+width:100%;
+overflow:hidden;
+font-size:12px;
+margin:0;
+}
+
+li input.button.selectedOption {
+color:#fff;
+font-weight:400;
+background-color:#888;
+outline:0;
+visibility:hidden;
+}
+
+.sectionHeader {
+margin:9px 20px 10px;
+}
+
+.nytlogo {
+width:171px;
+height:28px;
+background-position:0 3px!important;
+}
+
+.verticalLine {
+height:23px;
+width:1px;
+background:#ccc;
+}
+
+.sectionName {
+font-size:15px;
+font-family:nyt-franklin-1,nyt-franklin-2,Helvetica,Arial,sans-serif;
+font-weight:700;
+padding-left:10px;
+}
+
+.rightHeader {
+position:absolute;
+right:20px;
+top:20px;
+}
+
+.sectionFooter {
+font-size:24px;
+position:absolute;
+bottom:0;
+right:20px;
+left:20px;
+color:#ccc;
+height:24px;
+}
+
+.sectionButtons {
+position:absolute;
+right:10px;
+top:5px;
+}
+
+.sectionButtons .button {
+cursor:pointer;
+font-family:arial,sans-serif;
+font-weight:400;
+font-size:12px;
+color:#999;
+}
+
+.pageIndicators {
+font-size:24px;
+font-family:sans-serif;
+margin-top:-5px;
+}
+
+.pageScroller {
+position:absolute;
+top:50px;
+left:20px;
+bottom:30px;
+right:20px;
+width:auto;
+height:auto;
+overflow:auto;
+}
+
+.pageScrollContainer {
+overflow:hidden;
+position:absolute;
+top:50px;
+bottom:30px;
+right:20px;
+left:20px;
+}
+
+#contentPane {
+overflow:hidden;
+background:transparent;
+border:0 solid #ddd;
+position:absolute;
+left:0;
+top:0;
+right:140px;
+bottom:0;
+height:auto;
+width:auto;
+z-index:120;
+padding:0;
+}
+
+#scrollPlain>div {
+margin-bottom:20px;
+}
+
+#scrollPlain {
+position:absolute;
+left:0;
+right:0;
+width:auto;
+}
+
+.fastAnimate .shrinkWrap {
+-webkit-box-shadow:none;
+-webkit-transition:top .5s linear;
+-moz-transition:top .5s linear;
+-o-transition:top .5s linear;
+-ms-transition:top .5s linear;
+}
+
+.animate .shrinkWrap {
+-webkit-transition:top 1.1s;
+-moz-transition:top 1.1s;
+-o-transition:top 1.1s;
+-ms-transition:top 1.1s;
+}
+
+.pages {
+position:absolute;
+top:0;
+bottom:0;
+left:0;
+right:0;
+overflow:hidden;
+width:10000px;
+}
+
+.pageContent {
+-webkit-transform:translate3D(0,0,0);
+}
+
+.animate .pageContent {
+-webkit-transition:margin-left 1.1s;
+-moz-transition:margin-left 1.1s;
+-o-transition:margin-left 1.1s;
+-ms-transition:margin-left 1.1s;
+}
+
+.fastanimate .pageContent {
+-webkit-transition:margin-left .5s linear;
+-moz-transition:margin-left .5s linear;
+-o-transition:margin-left .5s linear;
+-ms-transition:margin-left .5s linear;
+}
+
+.grid {
+visibility:hidden;
+}
+
+.pages .grid {
+visibility:visible;
+}
+
+.sectionLabel {
+position:absolute;
+top:0;
+left:0;
+right:0;
+z-index:6000;
+background:#e6eff8;
+font-size:22px;
+font-family:Helvetica,Arial,sans-serif;
+border-bottom:1px solid #ccc;
+padding:5px 0 0 10px;
+}
+
+.blocks .story {
+text-align:left;
+cursor:pointer;
+margin:0;
+}
+
+.story.active,.story.active a {
+background-color:#eee;
+}
+
+.fill {
+position:absolute;
+top:0;
+bottom:0;
+right:0;
+left:0;
+width:auto;
+height:auto;
+}
+
+.blocks .story.current .container a,.blocks a:hover {
+color:#991014;
+opacity:1.0!important;
+}
+
+.blocks .story.current .fader,.blocks li:hover .fader {
+background:transparent;
+}
+
+.blocks .ad img {
+float:none;
+clear:none;
+margin:0!important;
+}
+
+.shrinkWrap {
+position:absolute;
+top:0;
+bottom:0;
+left:20px;
+right:20px;
+height:auto;
+width:auto;
+overflow:hidden;
+margin-top:20px;
+-webkit-transform:translate3D(0,0,0);
+z-index:120;
+}
+
+.shrinkWrap .page {
+float:left;
+margin:0;
+}
+
+.shrinkWrap .page.animate {
+-webkit-transition:left 1.1s;
+-moz-transition:left 1.1s;
+-o-transition:left 1.1s;
+-ms-transition:left 1.1s;
+}
+
+.grid .lastInRow .container .content {
+border-right:none;
+}
+
+.grid .selectionCursor .content {
+background-color:#e6eff8!important;
+border:1px solid #ccc;
+}
+
+.grid .story .container {
+overflow:hidden;
+-webkit-transition:opacity .7s linear;
+-moz-transition:opacity .7s linear;
+padding:7px 0;
+}
+
+.grid .container .content {
+border:1px solid transparent;
+height:100%;
+overflow:hidden;
+padding:0 10px;
+}
+
+#schemeSwitcher {
+position:absolute;
+bottom:0;
+right:-260px;
+top:0;
+width:246px;
+z-index:9999;
+border-left:1px solid #999;
+-webkit-transition:right .5s linear;
+-moz-transition:right .5s linear;
+background-color:#ccc;
+}
+
+.noSidebar #schemeSwitcher {
+right:10px;
+}
+
+#schemeSwitcher.hidden {
+right:-300px;
+}
+
+#schemeSwitcher.inactive {
+height:0;
+}
+
+#schemeSwitcher .header {
+font-family:helvetica,arial,sans-serif;
+position:absolute;
+top:0;
+right:0;
+height:40px;
+width:246px;
+text-shadow:0 1px 0 #fff;
+color:#646464;
+z-index:400;
+background-image:0 80%;
+}
+
+#schemeSwitcher .header strong {
+position:absolute;
+top:10px;
+left:10px;
+}
+
+.schemePreviewCloser {
+position:absolute;
+top:10px;
+margin-right:10px;
+margin-top:-5px;
+right:0;
+color:#646464;
+font-family:helvetica,arial,sans-serif;
+border:1px solid #777;
+padding-top:3px;
+padding-bottom:2px;
+}
+
+.scrollContainer {
+position:absolute;
+bottom:0;
+top:0;
+right:0;
+width:245px;
+overflow:auto;
+}
+
+.schemeList {
+margin-bottom:5px;
+margin-top:40px;
+}
+
+.schemePreview {
+cursor:pointer;
+border:1px solid transparent;
+border-radius:3px;
+color:#646464;
+font-weight:700;
+width:202px;
+background:#eee;
+-moz-box-shadow:0 0 6px #999;
+-webkit-box-shadow:0 0 6px #999;
+margin:10px auto;
+padding:7px;
+}
+
+.schemePreview.selectedOption {
+color:#eee;
+background:#555;
+}
+
+.schemePreview img {
+border:1px solid #ccc;
+}
+
+.schemeName {
+font-family:helvetica,arial,serif;
+}
+
+.readingListIndicator {
+width:40px;
+height:40px;
+float:right;
+cursor:pointer;
+}
+
+.readingListIndicator .button {
+text-align:right;
+border:1px solid transparent;
+color:#ccc;
+width:20px;
+height:16px;
+border-radius:5px;
+-webkit-border-radius:5px;
+-moz-border-radius:5px;
+-o-border-radius:5px;
+fent-weight:bold;
+font-family:arial,helvetica,sans-serif;
+-webkit-transition:opacity .3s linear;
+-moz-transition:opacity .3s linear;
+margin-left:8px;
+margin-top:-4px;
+padding:2px 0;
+}
+
+.expirationWarning {
+font-family:nyt-franklin-1,nyt-franklin-2,arial,helvetica,sans-serif;
+font-size:11px;
+color:red;
+}
+
+.activeSavedListPrompt {
+z-index:800;
+position:absolute;
+top:50%;
+left:50%;
+margin-top:-200px;
+width:500px;
+margin-left:-250px;
+background-color:#FFF;
+border:1px solid #ccc;
+border-radius:10px;
+-webkit-border-radius:10px;
+-moz-border-radius:10px;
+padding:20px;
+}
+
+.activeSavedListPrompt h1 {
+font-family:nyt-franklin-1,nyt-franklin-2,arial,helvetica,sans-serif;
+font-size:22px;
+border-bottom:1px solid #ccc;
+margin-top:0;
+padding-bottom:5px;
+margin-bottom:5px;
+}
+
+.activeSavedListPrompt p {
+font-family:nyt-franklin-1,nyt-franklin-2,arial,helvetica,sans-serif;
+font-size:14px;
+font-weight:700;
+color:#999;
+margin:5px 0;
+}
+
+.activeSavedListPrompt a {
+text-decoration:none;
+color:#004276;
+}
+
+.loggedInPrompt {
+margin-top:40px;
+}
+
+.loggedInPrompt h1 {
+font-size:16px;
+}
+
+.sampleArticles .sample {
+float:left;
+width:239px;
+}
+
+.sampleArticles .sample:first-child {
+margin-right:10px;
+padding-right:10px;
+border-right:1px solid #ccc;
+}
+
+.sampleArticles .sample h2 {
+font-size:16px;
+font-weight:400;
+margin:0;
+padding:0;
+}
+
+.sampleArticles .sample a {
+font-weight:400;
+color:#333;
+}
+
+#articleFrame .articleGateway {
+background-color:#f5f5f5;
+border-top:1px solid #089be7;
+margin-top:20px;
+padding:0 20%;
+}
+
+#articleFrame .gatewaySection {
+font-family:helvetica,arial,sans-serif!important;
+border-bottom:1px solid #ccc;
+-webkit-box-shadow:0 1px 0 #fff;
+margin:margin:0 auto;
+padding:15px 0;
+}
+
+#articleFrame .gatewaySection.last {
+border-bottom:none;
+-webkit-box-shadow:none;
+margin-bottom:5px;
+}
+
+#articleFrame .gatewaySection .subscribeCallout {
+border-radius:3px;
+-webkit-border-radius:3px;
+-moz-border-radius:3px;
+-ie-border-radius:3px;
+-o-border-radius:3px;
+padding:15px 0;
+}
+
+.gatewaySection h3 {
+color:#333;
+font-size:12px;
+line-height:20px;
+font-weight:700;
+margin:0 0 13px;
+padding:0;
+}
+
+#articleFrame .gatewaySection .learnMore {
+margin-bottom:0;
+}
+
+#articleFrame .gatewaySection .learnMore a {
+display:block;
+width:100%;
+text-align:center;
+font-size:13px;
+margin-top:12px;
+font-weight:400;
+margin-bottom:0;
+}
+
+#articleFrame .gatewaySection p {
+font-family:helvetica,arial,sans-serif!important;
+color:#333;
+text-indent:0;
+font-size:12px;
+margin-bottom:5px;
+}
+
+#articleFrame .gatewaySection a {
+color:#089be7;
+font-weight:700;
+}
+
+.gatewaySection img {
+display:block!important;
+width:152px;
+margin:0 auto;
+}
+
+.lockStatus {
+display:none;
+float:right;
+margin-top:3px;
+margin-left:5px;
+}
+
+.liteContent .lockStatus {
+display:block;
+width:7px;
+height:8px;
+}
+
+.darkPanel {
+position:absolute;
+z-index:930;
+opacity:.9;
+background-color:#000;
+color:#FFF;
+border:1px solid #000;
+-webkit-border-radius:10px;
+-moz-border-radius:10px;
+border-radius:10px;
+font-family:nyt-franklin-1,nyt-franklin-2,arial,helvetica,sans-serif;
+padding:20px;
+}
+
+.darkHeader {
+width:100%;
+border-bottom:1px solid #666;
+margin-bottom:15px;
+padding-bottom:15px;
+font-weight:700;
+font-size:18px;
+}
+
+.darkPanelContent {
+font-size:12px;
+}
+
+.darkPanelClose {
+position:absolute;
+top:20px;
+right:20px;
+border:1px solid #666;
+color:#FFF;
+font-weight:400;
+font-size:11px;
+padding-top:3px;
+padding-bottom:3px;
+}
+
+.offline .thumbnail,.offline .thumbWrapper,.offline .switcherSummaryContainer img {
+display:none!important;
+}
+
+.offline .image * {
+visibility:hidden!important;
+}
+
+.offline .image {
+border:1px solid #ddd!important;
+background-color:#ececec;
+}
+
+.passiveMessageDisplay {
+position:fixed;
+top:47%;
+left:50%;
+width:200px;
+margin-left:-165px;
+background:#000;
+opacity:0;
+color:#eee;
+font-family:nyt-franklin-1,nyt-franklin-2,arial,helvetica,sans-serif;
+font-size:16px;
+border:0 solid #000;
+border-radius:10px;
+-webkit-border-radius:10px;
+-moz-border-radius:10px;
+-o-border-radius:10px;
+z-index:10000000;
+text-align:center;
+-webkit-transition:opacity .7s;
+-moz-transition:opacity .7s;
+padding:20px;
+}
+
+.passiveMessageDisplay .warning {
+font-size:13px;
+color:#FF0;
+margin-top:10px;
+}
+
+.medium-skin #sidebar .content li {
+color:#ddd;
+}
+
+.medium-skin #sidebar .refresh {
+color:transparent;
+text-shadow:none;
+background:url(/webapps/skimmer/2.0/images/refresh-medium.png) no-repeat center center;
+}
+
+.medium-skin #sidebar .content li.selected {
+color:#FF0;
+background:none;
+border:none;
+}
+
+.medium-skin #sidebar dt {
+border-bottom:1px solid #eee;
+color:#eee;
+}
+
+.medium-skin .shrinkWrap {
+background-color:#555!important;
+-webkit-box-shadow:#333 0 0 16px;
+-moz-box-shadow:#333 0 0 16px;
+}
+
+.medium-skin .customize {
+color:#eee!important;
+background:url(/webapps/skimmer/2.0/images/customize-medium.png) no-repeat center right;
+}
+
+.medium-skin #skimmerArticleViewer {
+background-color:#555;
+color:#eee;
+}
+
+.medium-skin #skimmerArticleViewer .logo {
+background:transparent url(/webapps/skimmer/2.2/images/logo-t-light.png) left center no-repeat;
+border-right:1px solid #eee;
+}
+
+.medium-skin #articleFrame a {
+color:#eee!important;
+text-decoration:underline;
+}
+
+.medium-skin #articleControls button {
+background-color:#555;
+background:transparent;
+color:#eee;
+border-color:#eee;
+}
+
+.medium-skin .shortcuts {
+color:#eee;
+background:url(/webapps/skimmer/2.0/images/shortcuts-medium.png) no-repeat center right;
+}
+
+.medium-skin .account {
+color:#eee;
+background:url(/webapps/skimmer/2.0/images/myaccount-medium.png) no-repeat center right;
+}
+
+.medium-skin #articleTools .textResize {
+background:url(/webapps/skimmer/2.4/images/textsize-light.png) no-repeat;
+color:#eee;
+}
+
+.medium-skin .syncStatus .header {
+background:#555;
+color:#eee;
+text-shadow:none;
+}
+
+body.light-skin {
+background:#e0e0e0;
+}
+
+.light-skin .shrinkWrap {
+-moz-box-shadow:0 0 6px #999;
+-webkit-box-shadow:0 0 6px #999;
+border:1px solid transparent;
+background-color:#fff;
+}
+
+.light-skin #skimmerArticleViewer .logo {
+background:transparent url(/webapps/skimmer/2.4/images/logo-t-dark.png) left center no-repeat;
+border-right:1px solid #333;
+}
+
+.light-skin .grid .container .content {
+border-right:1px solid #e2e2e2;
+}
+
+.light-skin #pageLeftButton {
+width:20px;
+background:url(/webapps/skimmer/2.0/images/left-dark.png) center center no-repeat;
+}
+
+.light-skin #pageRightButton {
+width:20px;
+background:url(/webapps/skimmer/2.0/images/right-dark.png) center center no-repeat;
+}
+
+.light-skin #articleFooter {
+border-top:none;
+}
+
+.light-skin .line {
+color:#ccc;
+font-size:24px;
+}
+
+.light-skin .sectionFooter {
+border-top:1px solid #ccc;
+}
+
+.light-skin .credit {
+color:#999;
+background-color:#FFF;
+font-family:nyt-franklin-1,nyt-franklin-2,arial,sans-serif;
+text-align:right;
+font-size:10px;
+}
+
+.light-skin .caption {
+color:#444;
+}
+
+.light-skin #sidebar {
+background:transparent;
+border:none;
+}
+
+.light-skin #sidebar .refresh {
+color:transparent;
+text-shadow:none;
+background:url(/webapps/skimmer/2.0/images/reload-dark.png) no-repeat center center;
+}
+
+.light-skin #sidebar dt {
+color:#000;
+border-bottom:1px solid #999;
+text-shadow:#fff 0 1px 0;
+-webkit-box-shadow:0 1px 0 #fff;
+}
+
+.light-skin #sidebar dd {
+background:transparent;
+border-bottom:1px solid #999;
+-webkit-box-shadow:0 1px 0 #fff;
+margin-bottom:1px;
+}
+
+.light-skin #sidebar .content li {
+background:transparent;
+color:#646464;
+text-shadow:#fff 0 1px 0;
+border:1px solid transparent;
+}
+
+.light-skin .loginMessaging a {
+color:#646464;
+}
+
+.light-skin #sidebar .content li.selected {
+color:#fff;
+background:#b0b0b0;
+text-shadow:#777 0 1px 0;
+-webkit-transition:color .4s,background-color .2s,border .2s;
+border-top:1px solid #999;
+border-left:0 solid #999;
+border-bottom:1px solid #eee;
+border-right:0 solid #eee;
+}
+
+.light-skin .nytlogo {
+background:url(/webapps/skimmer/2.0/images/nytlogo.png) no-repeat;
+}
+
+.light-skin .customize {
+color:#646464!important;
+background:url(/webapps/skimmer/2.0/images/customize-dark.png) no-repeat center right;
+}
+
+.light-skin .shortcuts {
+color:#646464!important;
+background:url(/webapps/skimmer/2.0/images/shortcuts-dark.png) no-repeat center right;
+}
+
+.light-skin .account {
+color:#646464!important;
+background:url(/webapps/skimmer/2.0/images/myaccount-dark.png) no-repeat center right;
+}
+
+.light-skin #articleControls button {
+background:transparent;
+color:#999;
+border-color:#999;
+}
+
+.light-skin.liteContent .paySection .lockStatus {
+background:url(/webapps/skimmer/2.0/images/locks-dark.png) no-repeat;
+}
+
+.light-skin .syncStatus .header {
+background:#e0e0e0;
+color:#000;
+text-shadow:#fff 0 1px 0;
+}
+
+.dark-skin .mainView {
+background-color:#222;
+}
+
+.dark-skin #sidebar .refresh {
+color:transparent;
+text-shadow:none;
+background:url(/webapps/skimmer/2.0/images/refresh-light.png) no-repeat center center;
+}
+
+.dark-skin #sidebar dt {
+border-bottom:1px solid #555;
+color:#eee;
+}
+
+.dark-skin #sidebar dd {
+border-bottom:1px solid #555;
+}
+
+.dark-skin #sidebar .content li.selected {
+color:#000;
+background-color:#999;
+}
+
+.dark-skin .shrinkWrap {
+background-color:#333!important;
+-webkit-box-shadow:#000 0 0 3px;
+-moz-box-shadow:#000 0 0 3px;
+}
+
+.dark-skin .sectionHeader {
+color:#eee;
+border-bottom:1px solid #999;
+}
+
+.dark-skin #articleFrame p a {
+color:#aaa;
+}
+
+.dark-skin #skimmerArticleViewer .logo {
+background:transparent url(/webapps/skimmer/2.4/images/logo-t-light.png) left center no-repeat;
+border-right:1px solid #eee;
+}
+
+.dark-skin .summary p {
+color:#ccc;
+}
+
+.dark-skin .customize {
+color:#eee!important;
+background:url(/webapps/skimmer/2.0/images/customize-light.png) no-repeat center right;
+}
+
+.dark-skin #skimmerArticleViewer {
+background-color:#333;
+color:#eee;
+}
+
+.dark-skin .shortcuts {
+color:#eee;
+background:url(/webapps/skimmer/2.0/images/shortcuts-light.png) no-repeat center right;
+}
+
+.dark-skin .account {
+color:#eee;
+background:url(/webapps/skimmer/2.0/images/myaccount-light.png) no-repeat center right;
+}
+
+.dark-skin #articleControls button {
+background:transparent;
+color:#eee;
+border-color:#eee;
+}
+
+.dark-skin .syncStatus .header {
+background:#222;
+color:#eee;
+text-shadow:none;
+}
+
+body {
+border:none;
+overflow:hidden;
+position:fixed;
+top:0;
+bottom:0;
+left:0;
+right:0;
+-webkit-transition:background 1s;
+margin:0;
+padding:0;
+}
+
+body.fullscreen {
+background:#FFF;
+}
+
+.fullscreen .shrinkWrap {
+-webkit-box-shadow:none;
+margin-top:0;
+margin-bottom:0;
+left:0;
+right:0;
+}
+
+ul li {
+list-style:none;
+background:transparent;
+}
+
+.clear {
+clear:both;
+font-size:1px;
+}
+
+.button {
+border:1px solid #999;
+-webkit-border-radius:3px;
+-moz-border-radius:3px;
+border-radius:3px;
+font-size:14px;
+font-weight:700;
+cursor:pointer;
+padding:3px 10px;
+}
+
+.pageLeftIndicator {
+float:left;
+background-color:red;
+height:24px;
+width:20px;
+background:url(/webapps/skimmer/2.0/images/left-dark.png) no-repeat left center;
+cursor:pointer;
+}
+
+.pageCirclesContainer {
+float:left;
+text-transform:uppercase;
+font-family:arial;
+font-size:15px;
+letter-spacing:3px;
+}
+
+.pageRightIndicator {
+float:left;
+background-color:blue;
+height:24px;
+width:20px;
+background:url(/webapps/skimmer/2.0/images/right-dark.png) no-repeat right center;
+cursor:pointer;
+}
+
+#copyright {
+color:#999;
+font-size:12px;
+position:absolute;
+bottom:5px;
+left:5px;
+font-family:Helvetica,Arial,sans-serif;
+}
+
+#copyright a {
+color:#999;
+}
+
+.toggler {
+border:1px solid #ccc;
+-webkit-border-radius:5px;
+-moz-border-radius:5px;
+border-radius:5px;
+background-color:#fff;
+list-style:none;
+height:21px;
+margin:0 5px 0 0;
+padding:0;
+}
+
+.toggler li {
+display:block;
+float:left;
+margin:3px;
+}
+
+.toggler li:first-child {
+border-right:1px solid #ccc;
+padding-right:6px;
+}
+
+#articleBar {
+position:absolute;
+top:10px;
+left:20px;
+right:20px;
+width:auto;
+height:35px;
+overflow:hidden;
+}
+
+.fullscreen #articleBar {
+left:10px;
+}
+
+#skimmerArticleViewer {
+-webkit-transition:top .5s,bottom .5s,left .5s,right .5s,background .5s,margin-top .7s,margin-left .6s;
+-moz-transition:top .5s,bottom .5s,left .5s,right .5s,background .5s,margin-top .7s,margin-left .6s;
+overflow:hidden;
+background:#FFF;
+position:absolute;
+top:20px;
+bottom:20px;
+left:20px;
+right:160px;
+width:auto;
+height:auto;
+z-index:800;
+}
+
+#skimmerArticleViewer.belowScreen {
+margin-left:100%;
+}
+
+.fullscreen #skimmerArticleViewer {
+top:0;
+bottom:0;
+left:0;
+right:0!important;
+background:#fff;
+}
+
+#articleWrapper {
+width:1020px;
+margin:10px auto;
+}
+
+#articleAd {
+float:right;
+margin:0 20px;
+}
+
+#articleControls {
+background-color:transparent;
+z-index:501;
+position:absolute;
+top:0;
+right:5px;
+text-transform:uppercase;
+}
+
+#articleControls span {
+cursor:pointer;
+color:#444;
+}
+
+#articleControls img {
+display:block;
+cursor:pointer;
+background:none;
+margin:0;
+padding:0;
+}
+
+#articleControls button {
+border:1px solid transparent;
+-webkit-border-radius:5px;
+-moz-border-radius:5px;
+border-radius:5px;
+cursor:pointer;
+font-size:14px;
+background:#444;
+color:#eee;
+font-family:nyt-franklin-1,nyt-franklin-2,Helvetica,arial,sans-serif;
+}
+
+#pageLeftClickTarget {
+position:absolute;
+top:40px;
+left:0;
+bottom:40px;
+width:100px;
+opacity:0;
+}
+
+#pageRightClickTarget {
+position:absolute;
+top:40px;
+right:0;
+bottom:40px;
+width:200px;
+background-color:red;
+opacity:0;
+}
+
+#frameContainer {
+position:absolute;
+top:41px;
+bottom:10px;
+left:10px;
+right:10px;
+width:auto;
+height:auto;
+overflow:hidden;
+-webkit-transform:translateZ(0);
+}
+
+.fullscreen #frameContainer {
+left:10px;
+right:10px;
+bottom:10px;
+}
+
+#articleLayout {
+display:block;
+position:absolute;
+top:0;
+right:0;
+left:0;
+bottom:30px;
+height:auto;
+overflow:hidden;
+}
+
+#articleLayout .vertical {
+overflow:auto;
+top:0;
+bottom:0;
+left:0;
+right:0;
+position:absolute;
+}
+
+.vertical .articleBody,.vertical .entry-content {
+width:600px;
+color:#000;
+margin:10px auto;
+}
+
+.horizontal {
+height:100%;
+width:8000px;
+-webkit-transform:translate3D(0,0,0);
+}
+
+.horizontal.animate {
+-webkit-transition:margin-left 1s;
+-moz-transition:margin-left 1s;
+}
+
+.mediaAssets {
+float:left;
+text-align:center;
+height:100%;
+position:relative;
+}
+
+.mediaUnit {
+float:none;
+position:absolute;
+top:0;
+bottom:0;
+left:0;
+right:0;
+margin:0 auto;
+}
+
+#articleFrame {
+overflow:hidden;
+}
+
+#articleBar .logo {
+float:left;
+margin-right:8px;
+padding-right:8px;
+margin-top:4px;
+height:20px;
+width:13px;
+}
+
+#articleTitle {
+position:absolute;
+text-overflow:elipsis;
+left:50px;
+right:0;
+width:auto;
+height:30px;
+overflow:hidden;
+}
+
+#articleTitle a {
+color:#000;
+font-family:nyt-cheltenham-1,nyt-cheltenham-2,georgia,serif;
+font-size:24px;
+font-weight:400;
+text-decoration:none;
+-webkit-transition:color .5s,text-shadow .5s;
+-moz-transition:color .5s,text-shadow .5s;
+}
+
+#articlePageControls {
+position:absolute;
+bottom:-1px;
+right:7px;
+}
+
+#articlePageInfo {
+color:#555;
+font-family:nyt-franklin-1,nyt-franklin-2,helvetica,sans-serif;
+font-size:13px;
+padding:0 5px;
+}
+
+#articleFrame .articleColumn {
+float:left;
+padding-top:5px;
+}
+
+#articleFrame .articleColumn p,#articleFrame .articleColumn blockquote,#articleFrame .articleColumn ul,#articleFrame .articleColumn ol {
+color:#000;
+}
+
+#articleFrame .byline {
+color:#666;
+font-family:georgia,serif;
+font-size:11px;
+font-weight:400;
+}
+
+#columnatedContent .byline {
+display:inline;
+margin:0 0 5px;
+}
+
+#articleFrame .byline a {
+color:#666;
+}
+
+#columnatedContent .byline.author {
+margin-bottom:10px;
+font-weight:400;
+color:#666;
+}
+
+#articleFrame .timestamp,#articleFrame .dateline {
+color:#666;
+font-family:georgia,serif;
+font-size:11px;
+font-weight:400;
+margin-bottom:5px;
+}
+
+#columnatedContent .timestamp,#columnatedContent .dateline {
+display:inline;
+margin-bottom:10px;
+}
+
+#articleFrame .timestamp .date {
+font-size:11px;
+color:gray;
+font-weight:400;
+font-family:color:#666;
+}
+
+#articleFrame p {
+font-family:georgia,serif;
+font-size:13px;
+line-height:18px;
+color:#222;
+text-indent:30px;
+text-align:justify;
+-webkit-hyphens:auto;
+margin:0;
+}
+
+#articleFrame p.tagline {
+font-style:italic;
+margin-top:20px;
+}
+
+#articleFrame p:first-child {
+text-indent:0;
+}
+
+#articleFrame #authorId {
+font-style:italic;
+}
+
+#articleFrame a {
+color:#004276;
+text-decoration:none;
+}
+
+#articleFrame .mediaUnit {
+margin-top:15px;
+}
+
+#articleTools .item {
+float:left;
+margin-right:12px;
+padding-right:12px;
+padding-left:23px;
+cursor:pointer;
+border-right:1px solid #e2e2e2;
+font-family:Helvetica,sans-serif;
+color:#555;
+text-transform:capitalize;
+font-size:13px;
+padding-top:3px;
+}
+
+#articleTools ul {
+list-style:none;
+border:1px solid #ccc;
+margin:0;
+padding:0;
+}
+
+#articleTools li {
+font-family:Helvetica,sans-serif;
+font-size:13px;
+cursor:pointer;
+margin:5px 10px;
+padding:5px 0 5px 20px;
+}
+
+#articleTools .shareToolsContent {
+position:absolute;
+bottom:25px;
+left:0;
+z-index:50000;
+}
+
+#articleTools .email {
+background-image:url(http://graphics8.nytimes.com/images/article/functions/tools_email.gif);
+background-position:0 8px;
+background-repeat:no-repeat;
+}
+
+#articleTools .email a,#articleTools .twitter a,#articleTools .facebook a {
+color:#555;
+}
+
+#articleTools .twitter {
+background-image:url(http://graphics8.nytimes.com/images/article/functions/twitter.gif);
+background-position:-1px 4px;
+background-repeat:no-repeat;
+}
+
+#articleTools .facebook {
+background-image:url(http://graphics8.nytimes.com/images/article/functions/facebook.gif);
+background-position:-1px 4px;
+background-repeat:no-repeat;
+border:none!important;
+}
+
+.inputForm {
+position:absolute;
+z-index:820;
+bottom:60px;
+left:30px;
+width:400px;
+background-color:#FFF;
+-webkit-box-shadow:0 0 4px #ccc;
+-moz-box-shadow:0 0 4px #ccc;
+padding:20px;
+}
+
+.twitterCharacterCount,.facebookCharacterCount {
+font-size:12px;
+color:#999;
+font-family:helvetica,arial,sans-serif;
+}
+
+.inputForm .button {
+float:right;
+font-weight:400;
+width:50px;
+font-family:helvetica,arial,sans-serif;
+text-align:center;
+margin-left:10px;
+font-size:14px;
+}
+
+.inputForm textarea {
+margin-top:10px;
+width:400px;
+height:50px;
+}
+
+.inputForm .formLabel {
+font-family:helvetica,arial,sans-serif;
+font-weight:700;
+font-size:18px;
+}
+
+#columnatedContent .mediaAssets img {
+padding-bottom:1px;
+}
+
+.caption {
+display:block;
+font-family:arial,helvetica,sans-serif;
+font-size:11px;
+line-height:13px;
+color:#666;
+text-align:left;
+text-indent:0;
+margin:0;
+padding:0;
+}
+
+#articleLabel {
+position:absolute;
+top:44px;
+left:10px;
+height:20px;
+width:90%;
+text-align:left;
+background-color:#333;
+padding:8px;
+}
+
+#articleLabel a {
+text-decoration:none;
+font:Georgia,serif;
+font-weight:700;
+color:#004276;
+font-size:12px;
+font-family:'Lucida Grande',Arial,sans-serif;
+}
+
+#articleFooter {
+position:absolute;
+bottom:0;
+left:10px;
+right:10px;
+width:auto;
+padding-top:5px;
+height:20px;
+}
+
+#articleCloser {
+cursor:pointer;
+position:absolute;
+top:0;
+left:0;
+z-index:890;
+height:30px;
+width:30px;
+padding:8px;
+}
+
+#articleFrame .loginMessaging,#articleFrame .loginMessaging a {
+color:#333;
+font-family:helvetica,arial,sans-serif;
+font-size:12px;
+}
+
+#columnSizer {
+font-size:13px;
+line-height:18px;
+font-family:georgia;
+}
+
+.articleButtons {
+position:absolute;
+top:0;
+right:0;
+height:30px;
+width:auto;
+}
+
+.articleButton {
+background-color:#FFF;
+cursor:pointer;
+}
+
+.textResize {
+height:30px;
+width:30px;
+color:transparent;
+}
+
+#switcherShade {
+position:absolute;
+top:0;
+bottom:0;
+left:0;
+right:0;
+width:auto;
+height:auto;
+background-color:#777;
+overflow:hidden;
+z-index:9001;
+opacity:.7;
+}
+
+#articleSwitcher {
+position:absolute;
+top:0;
+bottom:0;
+left:0;
+right:120px;
+width:auto;
+height:auto;
+overflow:hidden;
+z-index:9002;
+}
+
+#switcherList {
+position:absolute;
+top:0;
+left:0;
+margin-left:-200px;
+list-style:none;
+-webkit-transition:margin-left .8s;
+-webkit-transform:translate3D(0,0,0);
+padding:0;
+}
+
+.active #switcherList {
+-webkit-transition:margin-top 1s;
+margin-left:0;
+}
+
+#switcherIndicator {
+position:fixed;
+top:30%;
+left:50%;
+margin-left:-273px;
+z-index:9500;
+width:420px;
+height:150px;
+background-color:#ccc;
+opacity:.5;
+border:3px solid #333;
+-webkit-box-shadow:2px 2px 10px #333;
+-webkit-border-radius:5px;
+}
+
+#switcherList .switcherSummaryContainer {
+border-bottom:1px solid #ccc;
+height:150px;
+width:400px;
+background-color:#eee;
+-webkit-box-shadow:2px 2px 10px #333;
+-webkit-transition:background-color .7s;
+margin:0;
+padding:10px;
+}
+
+#switcherList .selected .switcherSummaryContainer {
+border:3px solid #555;
+-webkit-border-radius:5px;
+z-index:10000;
+width:400px;
+margin-left:-8px;
+background-color:#fff;
+padding:10px 15px;
+}
+
+#switcherList h1 {
+font-size:22px;
+font-weight:400;
+font-family:nyt-cheltenham-1,nyt-cheltenham-2,georgia,serif;
+margin:10px 0 5px;
+}
+
+#switcherList .byline {
+color:gray;
+text-transform:uppercase;
+font-size:11px;
+font-family:nyt-franklin-1,nyt-franklin-2,helvetica,sans-serif;
+margin:0 0 5px;
+}
+
+#switcherList img {
+float:right;
+margin:0 10px;
+}
+
+#switcherList p {
+font-size:12px;
+color:#666;
+font-family:nyt-imperial-1,nyt-imperial-2,Georgia,serif;
+line-height:15px;
+margin:0;
+}
+
+.mainView {
+position:absolute;
+top:0;
+bottom:0;
+right:0;
+left:0;
+z-index:100;
+-webkit-transform:translateZ(0);
+-webkit-transition:top 1s 1s .7s,left 1s;
+-moz-transition:top 1s 1s 1s 1s;
+overflow:hidden;
+margin:0;
+padding:0;
+}
+
+.noSidebar #skimmerArticleViewer {
+right:20px;
+}
+
+.switchingSchemes .mainView {
+right:247px;
+top:0;
+bottom:0;
+left:0;
+}
+
+.normal #BroadsheetSpon {
+position:absolute;
+top:25px;
+right:150px;
+z-index:500;
+display:none;
+padding:0;
+}
+
+.fullscreen #BroadsheetSpon {
+position:fixed;
+top:default;
+right:default;
+bottom:1px;
+left:165px;
+z-index:600;
+}
+
+.TimesSkimmerTile {
+width:200px;
+height:175px;
+}
+
+.tilead {
+border-bottom:1px solid #ccc;
+}
+
+#articleFrame .articleColumn.articleAd {
+text-align:center;
+font-weight:700;
+text-transform:capitalize;
+font-family:sans-serif;
+overflow:hidden;
+}
+
+#articleFrame .articleColumn.articleAd iframe {
+margin:0 auto;
+}
+
+#articleFrame .articleColumn.articleAd img {
+display:block!important;
+margin:auto;
+}
+
+.interstitialContainer {
+position:absolute;
+top:10px;
+right:160px;
+left:20px;
+bottom:20px;
+background-color:#FFF;
+z-index:900;
+}
+
+.interstitialContent {
+height:480px;
+width:640px;
+margin:30px auto 10px;
+}
+
+.button.interstitialButton {
+width:640px;
+text-align:right;
+color:#004276;
+font-size:10px;
+font-weight:400;
+border:none;
+font-family:arial,helvetica,sans-serif;
+margin:0 auto;
+}
+
+.accountPanel {
+top:30%;
+left:50%;
+margin-left:-290px;
+width:380px;
+}
+
+.accountContent {
+font-size:13px;
+}
+
+.syncStatus .header .widgets li,.articleColumnContainer {
+float:left;
+}
+
+.story,.light-skin #skimmerArticleViewer {
+background-color:#fff;
+}
+
+.headline a,.headline a:hover {
+text-decoration:none;
+}
+
+.headline a:link,.sectionButtons .button:hover,.readingListIndicator.hover .button,.medium-skin #articleFrame .gatewaySection p,.light-skin .sectionName,.dark-skin #articleFrame .gatewaySection p {
+color:#333;
+}
+
+#sidebar.hover ::-webkit-scrollbar-thumb:vertical,#sidebar:hover .feedStatus,#sidebar.syncing .feedStatus,.passiveMessageDisplay.active,.passiveMessageDisplay.active.lock {
+opacity:1.0;
+}
+
+body.fullscreen.articleActive #sidebar,.premiumContent .lockStatus,br,.horizontal .articleColumn img,#articleFrame #header_search,#articleFrame .nextArticleLink {
+display:none;
+}
+
+#sidebar .selected .feedStatus,.shortcutsPanel .keyboardHints th {
+color:#FFF;
+}
+
+.shortcutsPanel .generalHints img:last-child,.grid .inLastRow .container,.inLastRow .tilead {
+border-bottom:none;
+}
+
+.story p a,.light-skin .pageCirclesContainer {
+color:#777;
+}
+
+ul,#switcherList li {
+margin:0;
+padding:0;
+}
+
+.switchingSchemes #schemeSwitcher,.noSidebar #contentPane {
+right:0;
+}
+
+.sampleArticles .sample .thumbnail,#skimmerArticleViewer.visible {
+margin-top:0;
+}
+
+.passiveMessageDisplay a,.accountContent a {
+color:#507e99;
+font-weight:700;
+text-decoration:none;
+}
+
+.medium-skin .mainView,.medium-skin .story,.medium-skin #articleFrame .articleColumn {
+background-color:#555;
+}
+
+.medium-skin.fullscreen .shrinkWrap,.dark-skin.fullscreen .shrinkWrap {
+-webkit-box-shadow:none;
+-moz-box-shadow:none;
+}
+
+.medium-skin .nytlogo,.dark-skin .nytlogo {
+background:url(/webapps/skimmer/2.0/images/nytlogo-white.png) no-repeat;
+}
+
+.medium-skin .sectionHeader,.medium-skin .credit,.medium-skin .caption,.medium-skin .summary,.medium-skin .byline,.medium-skin #articleFrame .dateline,.medium-skin #articleFrame .byline,.medium-skin .headline a,.medium-skin .kicker,.medium-skin .headline a:link,.medium-skin #articleTitle a,.medium-skin #articlePageInfo,.medium-skin #articleTools li,.medium-skin #articleTools .item,.dark-skin #sidebar .content li,.dark-skin .credit,.dark-skin .caption,.dark-skin .byline,.dark-skin #articleFrame .byline,.dark-skin #articleFrame .dateline,.dark-skin .headline a,.dark-skin .headline a:link,.dark-skin .kicker,.dark-skin .loginMessaging,.dark-skin .loginMessaging a,.dark-skin #articleTitle a,.dark-skin #articlePageInfo,.dark-skin #articleTools li,.dark-skin #articleTools li a {
+color:#eee;
+}
+
+.medium-skin .pageLeftIndicator,.dark-skin .pageLeftIndicator {
+background-image:url(/webapps/skimmer/2.0/images/left-light.png);
+}
+
+.medium-skin .pageRightIndicator,.dark-skin .pageRightIndicator {
+background-image:url(/webapps/skimmer/2.0/images/right-light.png);
+}
+
+.medium-skin #articleFrame .articleColumn p,.dark-skin #articleFrame .articleColumn p {
+color:#eee;
+font-family:helvetica,arial,sans-serif;
+}
+
+.medium-skin #pageLeftButton,.dark-skin #pageLeftButton {
+width:20px;
+background:url(/webapps/skimmer/2.0/images/left-light.png) center center no-repeat;
+}
+
+.medium-skin #pageRightButton,.dark-skin #pageRightButton {
+width:20px;
+background:url(/webapps/skimmer/2.0/images/right-light.png) center center no-repeat;
+}
+
+.medium-skin #frameContainer,.dark-skin #frameContainer {
+border-top:1px solid #777;
+}
+
+.medium-skin #articleTools .saveArticle,.light-skin #articleTools .saveArticle,.dark-skin #articleTools .saveArticle {
+background:url(/webapps/skimmer/2.4/images/article-save-light.png) no-repeat center left;
+}
+
+.medium-skin #articleTools .shareToolsMenu,.light-skin #articleTools .shareToolsMenu,.dark-skin #articleTools .shareToolsMenu {
+background:url(/webapps/skimmer/2.4/images/share-light.png) no-repeat center left;
+}
+
+.medium-skin #articleFrame .gatewaySection a,.dark-skin #articleFrame .gatewaySection a {
+color:#089be7!important;
+text-decoration:none;
+}
+
+.light-skin .blocks .container,.light-skin .shareToolsContent,.light-skin .articleColumn {
+background-color:#FFF;
+}
+
+.light-skin #articleBar,.light-skin .sectionHeader {
+border-bottom:1px solid #000;
+}
+
+.light-skin .textResize,.dark-skin .textResize {
+background:url(/webapps/skimmer/2.4/images/textsize-light.png) no-repeat;
+}
+
+body.dark-skin.fullscreen,.dark-skin .story,.dark-skin #articleFrame .articleColumn {
+background-color:#333;
+}
+
+.dark-skin #sidebar,#articleTools .item:last-child {
+border-left:none;
+}
+
+#articleLayout.animate,#articleTitle.animate {
+-webkit-transition:margin-left .7s;
+-moz-transition:margin-left .7s;
+}
+
+.vertical .byline,.vertical .dateline,.vertical .image {
+width:600px;
+margin:10px auto;
+}
+
+#articleTools,.loginMessaging {
+margin-top:4px;
+float:left;
+}
+
+body.bigText #articleFrame p,body.bigText #columnSizer {
+font-size:18px;
+line-height:22px;
+}
+
+.noShadows .shrinkWrap,.noShadows #sidebar {
+-webkit-box-shadow:none!important;
+}
